@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- アプリケーションメッセージ定義ファイル -->
+<messages>
+	<message innerCode="org.hac.facade.impl.EntranceLoginFacade:00001">
+		<id>0001</id>
+		<outerCode>I00001</outerCode>
+		<view-message>ログインしました。業務を選択してください。</view-message>
+		<log-message></log-message>
+	</message>
+
+	<message innerCode="org.hac.facade.impl.EntranceLoginFacade:00002">
+		<id>0002</id>
+		<outerCode>E00003</outerCode>
+		<view-message>ログインできません。入力したユーザID、パスワードを確認してください。</view-message>
+		<log-message>ログ用メッセージ３</log-message>
+	</message>
+
+	<message innerCode="org.hac.facade.impl.SimpleSearchFacade:00001">
+		<id>0003</id>
+		<outerCode>E00004</outerCode>
+		<view-message>簡易検索は少なくとも１つの検索項目を入力してください。</view-message>
+		<log-message>ログ用メッセージ３</log-message>
+	</message>
+
+	<message innerCode="org.hac.service.impl.CheckUserInfo:00001">
+		<id>0004</id>
+		<outerCode>E00005</outerCode>
+		<view-message>ユーザIDが存在しません。</view-message>
+		<log-message>ユーザIDが存在しません。</log-message>
+	</message>
+
+	<message innerCode="org.hac.service.impl.CheckUserInfo:00002">
+		<id>0005</id>
+		<outerCode>E00006</outerCode>
+		<view-message>店舗管理Noが存在しません。</view-message>
+		<log-message>店舗管理Noが存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.CheckUserInfo:00003">
+		<id>0006</id>
+		<outerCode>E00007</outerCode>
+		<view-message>パスワードが存在しません。</view-message>
+		<log-message>パスワードが存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.RequireCheck:00001">
+		<id>0007</id>
+		<outerCode>E00008</outerCode>
+		<view-message>必須入力項目の入力がありません。{0}を入力してください。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.FormatCheck:00001">
+		<id>0008</id>
+		<outerCode>E00009</outerCode>
+		<view-message>入力形式が不正です。{0}の入力を見直してください。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.FormatCheck:00002">
+		<id>0009</id>
+		<outerCode>E00010</outerCode>
+		<view-message>入力形式が不正です。{0}の入力を見直してください。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.CheckUserInfo:00004">
+		<id>0010</id>
+		<outerCode>E00011</outerCode>
+		<view-message>入力した店舗管理Noは登録されていません。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.CheckUserInfo:00005">
+		<id>0011</id>
+		<outerCode>E00012</outerCode>
+		<view-message>入力した店舗管理Noに対してユーザ情報は登録されていません。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.facade.impl.CustmerRegistExecuteFacade:00001">
+		<id>0012</id>
+		<outerCode>I00002</outerCode>
+		<view-message>顧客データが正常に登録されました。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.facade.impl.CustmerRegistExecuteFacade:00002">
+		<id>0013</id>
+		<outerCode>E00013</outerCode>
+		<view-message>TEL（自宅）、またはTEL（携帯）のどちらかは入力してください。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.facade.impl.CustmerRegistExecuteFacade:00003">
+		<id>0014</id>
+		<outerCode>E00014</outerCode>
+		<view-message>顧客データが重複している可能性があります。データを確認してください。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.remote.AbstractHttpRemoteCall:90001">
+		<id>0015</id>
+		<outerCode>E00015</outerCode>
+		<view-message>リモート呼び出しで予期せぬエラーが発生しました。</view-message>
+		<log-message>リモート呼び出しで予期せぬエラーが発生しました。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.remote.impl.AccountLookup:90001">
+		<id>0016</id>
+		<outerCode>E00014</outerCode>
+		<view-message>店舗情報が存在しません。</view-message>
+		<log-message>店舗情報が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.CorpLookup:00001">
+		<id>0017</id>
+		<outerCode>E00015</outerCode>
+		<view-message>会社管理Noが存在しません。</view-message>
+		<log-message>会社管理Noが存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.CorpLookup:00002">
+		<id>0018</id>
+		<outerCode>E00016</outerCode>
+		<view-message>会社情報が存在しません。</view-message>
+		<log-message>会社情報が存在しません。</log-message>
+	</message>
+	<message innerCode="org.hac.remote.impl.OrgLookup:90001">
+		<id>0019</id>
+		<outerCode>E00017</outerCode>
+		<view-message>会社情報が存在しません。</view-message>
+		<log-message>会社情報が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.StoresInfoLookup:00001">
+		<id>0020</id>
+		<outerCode>E00018</outerCode>
+		<view-message>会社管理Noが存在しません。</view-message>
+		<log-message>会社管理Noが存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.StoresInfoLookup:00002">
+		<id>0021</id>
+		<outerCode>E00019</outerCode>
+		<view-message>会社管理Noに紐づく店舗が存在しません。</view-message>
+		<log-message>会社管理Noに紐づく店舗が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.UpdateUserData:00001">
+		<id>0022</id>
+		<outerCode>E00020</outerCode>
+		<view-message>店舗管理Noの入力が存在しません。</view-message>
+		<log-message>店舗管理Noの入力が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.UpdateUserData:00002">
+		<id>0023</id>
+		<outerCode>E00021</outerCode>
+		<view-message>ユーザIDの入力が存在しません。</view-message>
+		<log-message>ユーザIDの入力が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.UpdateUserData:00003">
+		<id>0024</id>
+		<outerCode>E00022</outerCode>
+		<view-message>パスワードの入力が存在しません。</view-message>
+		<log-message>パスワードの入力が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.StoreInfoOnlyLookup:00001">
+		<id>0025</id>
+		<outerCode>E00023</outerCode>
+		<view-message>店舗管理Noの入力が存在しません。</view-message>
+		<log-message>店舗管理Noの入力が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.StoreInfoOnlyLookup:00002">
+		<id>0026</id>
+		<outerCode>E00024</outerCode>
+		<view-message>店舗管理Noに対する店舗情報が存在しません。</view-message>
+		<log-message>店舗管理Noに対する店舗情報が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.UpdateStoreData:00001">
+		<id>0027</id>
+		<outerCode>E00025</outerCode>
+		<view-message>{0}の入力が存在しません。</view-message>
+		<log-message>{0}の入力が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.ReserveLookupByHub:00001">
+		<id>0028</id>
+		<outerCode>E00026</outerCode>
+		<view-message>店舗管理Noの入力が存在しません。</view-message>
+		<log-message>店舗管理Noの入力が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.service.impl.ReserveDataRegistByHub:00001">
+		<id>0029</id>
+		<outerCode>E00027</outerCode>
+		<view-message>{0}の入力が存在しません。</view-message>
+		<log-message>{0}の入力が存在しません。</log-message>
+	</message>
+	
+	<message innerCode="org.hac.interceptor.SessionCheckerInterceptor:00001">
+		<id>9999</id>
+		<outerCode>E00004</outerCode>
+		<view-message>セッションが無効です。ログインしなおしてください。</view-message>
+		<log-message></log-message>
+	</message>
+</messages>

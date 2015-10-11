@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spring設定ファイル 業務Action設定 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- 初期画面起動 -->
+	<bean id="InitViewAction" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="" />
+	</bean>
+
+	<!-- ログイン処理 -->
+	<bean id="EntranceLogin" class="org.tsrvfw.action.impl.ComponentExecuteAction"
+		scope="prototype">
+		<property name="facade" ref="entranceLoginFacade" />
+		<property name="model" ref="LoginModel" />
+		<property name="displayCode" value="" />
+	</bean>
+
+	<!-- ログアウト処理 -->
+	<bean id="EntranceLogout" class="org.tsrvfw.action.impl.ComponentExecuteAction"
+		scope="prototype">
+		<property name="facade" ref="entranceLogoutFacade" />
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="" />
+	</bean>
+
+	<!-- 簡易検索 -->
+	<bean id="SimpleSearch" class="org.tsrvfw.action.impl.ComponentExecuteAction"
+		scope="prototype">
+		<property name="facade" ref="simpleSearchFacade" />
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="leave" />
+		<property name="alphaDisplayCode" value="simplesearch" />
+	</bean>
+
+	<!-- メニューに戻る TODOつくってない -->
+	<bean id="BacktoMainMenu" class="org.tsrvfw.action.impl.ComponentExecuteAction"
+		scope="prototype">
+		<property name="facade" ref="backtoMainMenuFacade" />
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="D00005" />
+	</bean>
+
+	<!-- メニュー 顧客管理 -->
+	<bean id="CustmerMng" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="custmer" />
+	</bean>
+	<!-- 顧客管理 登録 -->
+	<bean id="CustmerRegist" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CustmerModel" />
+		<property name="displayCode" value="custmer" />
+		<property name="workType" value="1" />
+	</bean>
+	<bean id="CustmerRegistExecute" class="org.tsrvfw.action.impl.ComponentExecuteAction"
+		scope="prototype">
+		<property name="facade" ref="custmerRegistExecute" />
+		<property name="model" ref="CustmerModel" />
+		<property name="displayCode" value="custmer" />
+		<property name="workType" value="1" />
+	</bean>
+	<!-- 顧客管理 検索 -->
+	<bean id="CustmerSearch" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CustmerModel" />
+		<property name="displayCode" value="custmer" />
+		<property name="workType" value="2" />
+	</bean>
+	<bean id="CustmerSearchExecute" class="org.tsrvfw.action.impl.ComponentExecuteAction"
+		scope="prototype">
+		<property name="facade" ref="custmerSearchExecute" />
+		<property name="model" ref="CustmerModel" />
+		<property name="displayCode" value="custmer" />
+		<property name="workType" value="2" />
+	</bean>
+	
+	<!-- メニュー 来店履歴管理 -->
+	<bean id="VisitRecordMng" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="recorde" />
+	</bean>
+
+	<!-- メニュー 予約管理 -->
+	<bean id="ReserveMng" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="reserve" />
+	</bean>
+	
+	<!-- メニュー 販売促進管理 -->
+	<bean id="PromotionMng" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="promotion" />
+	</bean>
+	
+	<!-- メニュー ユーザ情報管理 -->
+	<bean id="SysUserMng" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="sysuser" />
+	</bean>
+	
+	<!-- メニュー 会社情報管理 -->
+	<bean id="OrgMng" class="org.tsrvfw.action.impl.TransitionAction"
+		scope="prototype">
+		<property name="model" ref="CommonModel" />
+		<property name="displayCode" value="org" />
+	</bean>
+	
+</beans>

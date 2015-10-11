@@ -1,0 +1,21 @@
+.entranceTitle01 {
+	display: box;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	background-color: #87CEEB;
+}
+.entranceList01 {
+
+}
+.entranceListContents01 {
+	display: box;
+	width: 100px;
+	height: 50px;
+	list-style-type: none;
+	box-shadow:1px 1px 3px #000;
+}
+.entranceContents01 {
+	padding: 10% 0% 0% 0%;
+}

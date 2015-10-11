@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" default="makeJar" basedir="./">
+
+	<!-- ソースファイル -->
+	<property name="dir.src" value="./src">
+	</property>
+
+	<!-- クラスファイル -->
+	<property name="dir.classes" value="./build">
+	</property>
+
+	<!-- クラスパス -->
+	<path id="classpath.all">
+		<fileset dir="../haccommon/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- コンパイル実行 -->
+	<target name="compile" description="パッケージのコンパイル" depends="cleanup">
+		<echo message="コンパイル実行" />
+		<javac srcdir="${dir.src}" destdir="${dir.classes}" encoding="UTF-8" source="1.6">
+			<!-- クラスパスの指定 -->
+			<classpath refid="classpath.all" />
+			<!-- testパッケージを除く -->
+			<!-- <exclude name="test/**" /> -->
+		</javac>
+	</target>
+
+	<!-- クラスファイルクリーンアップ -->
+	<target name="cleanup" description="クリーンアップ">
+		<echo message="クリーンアップ実行" />
+		<delete dir="${dir.classes}" />
+		<mkdir dir="${dir.classes}" />
+	</target>
+
+	<!-- JARファイル作成 -->
+	<target name="makeJar" description="JARファイル作成" depends="compile">
+		<echo message="JARファイルを作成・コピー" />
+		<jar basedir="${dir.classes}" destfile="hacdev.jar" />
+		<delete file="../hacweb/WEB-INF/lib/hacdev.jar" />
+		<copy file="hacdev.jar" todir="../hacweb/WEB-INF/lib">
+		</copy>
+	</target>
+
+</project>

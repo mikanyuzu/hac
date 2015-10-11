@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copyclasses" default="copy" basedir="./">
+	<target name="copy">
+		<delete dir="C:/Work/01.private/00.tsubaki/02.ws/001/hacweb/WEB-INF/classes/org"/>
+		<copy todir="C:/Work/01.private/00.tsubaki/02.ws/001/hacweb/WEB-INF/classes">
+			<fileset dir="bin">
+			</fileset>
+		</copy>
+	</target>
+</project>
