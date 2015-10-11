@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!--
+   Spring設定ファイル
+   業務Facade設定
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- ログイン処理Facade -->
+    <bean id="entranceLoginFacade" class="org.hac.facade.impl.EntranceLoginFacade" scope="prototype">
+    	<property name="checkUserInfo" ref="checkUserInfo" />
+    	<property name="inputRequireCheck" ref="inputRequireCheck" />
+    </bean>
+
+	<!-- 簡易検索処理Facade -->
+    <bean id="simpleSearchFacade" class="org.hac.facade.impl.SimpleSearchFacade" scope="prototype">
+    	<property name="inputRequireCheck" ref="inputRequireCheck" />
+    </bean>
+
+	<!-- ログアウト処理Facade -->
+    <bean id="entranceLogoutFacade" class="org.hac.facade.impl.EntranceLogoutFacade" scope="prototype">
+    </bean>
+    
+    <!-- 顧客マスタ登録Facade -->
+    <bean id="custmerRegistExecute" class="org.hac.facade.impl.CustmerRegistExecuteFacade" scope="prototype">
+    	<property name="requireCheck" ref="requireCheck" />
+    	<property name="formatCheck" ref="formatCheck" />
+    	<property name="registCustmer" ref="registCustmer" />
+    	<property name="inputRequireCheck" ref="inputRequireCheck" />
+    	<property name="searchCustmer" ref="searchCustmer" />
+    </bean>
+    <!-- 顧客マスタ検索Facade -->
+    <bean id="custmerSearchExecute" class="org.hac.facade.impl.CustmerSearchExecuteFacade" scope="prototype">
+    	<property name="inputRequireCheck" ref="inputRequireCheck" />
+    	<property name="searchCustmer" ref="searchCustmer" />
+    </bean>
+    
+<!--
+    <bean id="backtoMainMenuFacade" class="org.hac.facade.impl.BacktoMainMenuFacade" scope="prototype">
+        <property name="noticeListSelect" ref="noticeListSelect" />
+    </bean>
+
+    <bean id="hacTransition" class="org.hac.facade.impl.hacTransition" scope="prototype">
+        <property name="eventdata1" ref="eventdata1" />
+    </bean>
+
+    <bean id="diarySelectFacade" class="org.hac.facade.impl.DiarySelectFacade" scope="prototype">
+        <property name="diarySelectService" ref="diarySelectService" />
+    </bean>
+ -->
+</beans>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+
+		<!-- 共通例外 -->
+		<global-results>
+			<result name="system_error">/WEB-INF/errors/systemError.jsp</result>
+			<result name="fw_system_error">/WEB-INF/errors/systemError.jsp</result>
+			<result name="forbidden_error">/WEB-INF/errors/403.jsp</result>
+			<result name="notfound_error">/WEB-INF/errors/404.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="sample.HttpForbiddenRuntimeException"
+				result="forbidden_error" />
+			<exception-mapping exception="sample.HttpNotFoundRuntimeException"
+				result="notfound_error" />
+			<exception-mapping exception="java.lang.Exception"
+				result="system_error" />
+		</global-exception-mappings>
+
+		<!-- 個別Action -->
+		<!-- 初期画面表示 -->
+		<action name="InitView" class="InitViewAction">
+			<result name="success">/WEB-INF/jsp/login.jsp</result>
+		</action>
+
+		<!-- ログイン -->
+		<action name="EntranceLogin" class="EntranceLogin">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+			<result name="input">/WEB-INF/jsp/login.jsp</result>
+			<result name="business_error">/WEB-INF/jsp/login.jsp</result>
+		</action>
+		
+		<!-- 簡易検索 -->
+		<action name="SimpleSearch" class="SimpleSearch">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+			<result name="input">/WEB-INF/jsp/main_display_template1.jsp</result>
+			<result name="business_error">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+
+		<!-- ログアウト -->
+		<action name="EntranceLogout" class="EntranceLogout">
+			<result name="success">/WEB-INF/jsp/login.jsp</result>
+		</action>
+
+		<!-- メニューに戻る -->
+		<action name="BacktoMainMenu" class="BacktoMainMenu">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		
+		<!-- メニュー 顧客管理 -->
+		<action name="CustmerMng" class="CustmerMng">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		<action name="CustmerRegist" class="CustmerRegist">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		<action name="CustmerRegistExecute" class="CustmerRegistExecute">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+			<result name="input">/WEB-INF/jsp/main_display_template1.jsp</result>
+			<result name="business_error">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		<action name="CustmerSearch" class="CustmerSearch">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		<action name="CustmerSearchExecute" class="CustmerSearchExecute">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+			<result name="business_error">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		
+		<!-- メニュー 来店履歴管理 -->
+		<action name="VisitRecordMng" class="VisitRecordMng">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		
+		<!-- メニュー 予約管理 -->
+		<action name="ReserveMng" class="ReserveMng">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		
+		<!-- メニュー 販売促進管理 -->
+		<action name="PromotionMng" class="PromotionMng">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		
+		<!-- メニュー ユーザ情報管理 -->
+		<action name="SysUserMng" class="SysUserMng">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		
+		<!-- メニュー 会社情報管理 -->
+		<action name="OrgMng" class="OrgMng">
+			<result name="success">/WEB-INF/jsp/main_display_template1.jsp</result>
+		</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<!--  -->
+	<select id="selectStoreByHubMngNo" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			hub_mng_no,
+			hub_name,
+			hub_tel,
+			hub_mail,
+			hub_print_name,
+			email_send_address,
+			email_send_smtp,
+			email_send_port,
+			email_send_account,
+			email_send_passwd,
+			hub_custmer_prop_setting
+		from 
+			store_mng 
+		where 
+			hub_mng_no = #hub_mng_no#
+	</select>
+	
+	<update id="updateStoreInfoByHubMngNo" parameterClass="java.util.HashMap">
+		update
+			store_mng
+		set 
+			hub_name = #hub_name#,
+			hub_tel = #hub_tel#,
+			hub_mail = #hub_mail#,
+			hub_print_name = #hub_print_name#,
+			email_send_address = #email_send_address#,
+			email_send_smtp = #email_send_smtp#,
+			email_send_port = #email_send_port#,
+			email_send_account = #email_send_account#,
+			email_send_passwd = #email_send_passwd#,
+			hub_custmer_prop_setting = #hub_custmer_prop_setting#,
+			update_date = #update_date#,
+			update_user = #update_user#
+		where 
+			hub_mng_no = #hub_mng_no#
+	</update>
+</sqlMap>

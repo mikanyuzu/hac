@@ -1,0 +1,16 @@
+#loginButton {
+}
+#loginButton:active{
+    color: #3b82ae;
+    background: -moz-linear-gradient(
+        top,
+        #ffffff 0%,
+        #ffffff);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#ffffff),
+        to(#ffffff));
+    border: 1px solid #3b82ae;
+    padding: 1px;
+    background-color: #ffffff;
+}

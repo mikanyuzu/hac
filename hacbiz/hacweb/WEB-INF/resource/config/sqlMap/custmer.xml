@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<select id="selectCustmerMngNo" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			concat(#hub_mng_dist#, lpad(count(1) + 1, 6, 0)) as custmer_mng_no
+		from
+			hub_custmer_mst
+		where 
+			hub_mng_no = #hub_mng_no#
+	</select>
+	
+	<select id="selectCustmerOfHubMngNo" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			detail.custmer_mng_no,
+			detail.custmer_name_first,
+			detail.custmer_name_last,
+			detail.custmer_name_first_read,
+			detail.custmer_name_last_read,
+			detail.custmer_gender,
+			detail.custmer_age,
+			detail.custmer_address1,
+			detail.custmer_address2,
+			detail.custmer_address3,
+			detail.custmer_tel,
+			detail.custmer_tel_cel,
+			detail.custmer_email,
+			detail.custmer_employment,
+			detail.custmer_employment_tel,
+			detail.custmer_employment_email,
+			detail.send_email_type,
+			detail.first_visit_date,
+			detail.custmer_regist_date,
+			detail.member_type,
+			detail.member_dist,
+			detail.create_date,
+			detail.update_date,
+			detail.create_user,
+			detail.update_user
+		from
+			custmer_detail as detail
+		inner join 
+			hub_custmer_mst as mst
+		on 
+			mst.custmer_mng_no = detail.custmer_mng_no
+		where 
+			mst.hub_mng_no = #hub_mng_no#
+			<isNotEmpty prepend="and" property="custmer_mng_no">
+				detail.custmer_mng_no = #custmer_mng_no#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_name_first">
+				detail.custmer_name_first like concat('%', #custmer_name_first#, '%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_name_last">
+				detail.custmer_name_last like concat('%', #custmer_name_last#, '%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_name_first_read">
+				detail.custmer_name_first_read like concat('%', #custmer_name_first_read#, '%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_name_last_read">
+				detail.custmer_name_last_read like concat('%', #custmer_name_last_read#, '%')
+			</isNotEmpty>
+			<isNotEqual prepend="and" property="custmer_gender" compareValue="0">
+				detail.custmer_gender = #custmer_gender#
+			</isNotEqual>
+			<isNotEmpty prepend="and" property="custmer_age">
+				detail.custmer_age = #custmer_age#
+			</isNotEmpty>
+			<isNotEqual prepend="and" property="custmer_address1" compareValue="0">
+				detail.custmer_address1 = #custmer_address1#
+			</isNotEqual>
+			<isNotEmpty prepend="and" property="custmer_address2">
+				detail.custmer_address2 like concat('%', #custmer_address2#, '%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_address3">
+				detail.custmer_address3 like concat('%', #custmer_address3#, '%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_tel">
+				detail.custmer_tel = #custmer_tel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_tel_cel">
+				detail.custmer_tel_cel = #custmer_tel_cel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_email">
+				detail.custmer_email = #custmer_email#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_employment">
+				detail.custmer_employment = #custmer_employment#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_employment_tel">
+				detail.custmer_employment_tel = #custmer_employment_tel#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_employment_email">
+				detail.custmer_employment_email = #custmer_employment_email#
+			</isNotEmpty>
+			<isNotEqual prepend="and" property="send_email_type" compareValue="0">
+				detail.send_email_type = #send_email_type#
+			</isNotEqual>
+			<isNotEmpty prepend="and" property="first_visit_date" >
+				detail.first_visit_date = #first_visit_date#
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_regist_date">
+				detail.custmer_regist_date = #custmer_regist_date#
+			</isNotEmpty>
+			<isNotEqual prepend="and" property="member_type" compareValue="0">
+				detail.member_type = #member_type#
+			</isNotEqual>
+			<isNotEmpty prepend="and" property="member_dist">
+				detail.member_dist = #member_dist#
+			</isNotEmpty>
+	</select>
+	
+	<insert id="insertCustmerMst" parameterClass="java.util.HashMap">
+		insert into 
+			hub_custmer_mst(
+				hub_mng_no,
+				custmer_mng_no,
+				snap_mng_no,
+				create_date,
+				update_date,
+				create_user,
+				update_user
+			)
+			values (
+				#hub_mng_no#,
+				#custmer_mng_no#,
+				#snap_mng_no#,
+				#create_date#,
+				#update_date#,
+				#create_user#,
+				#update_user#
+			)
+	</insert>
+	
+	<insert id="insertCustmerDetail" parameterClass="java.util.HashMap">
+		insert into 
+			custmer_detail(
+				custmer_mng_no,
+				custmer_name_first,
+				custmer_name_last,
+				custmer_name_first_read,
+				custmer_name_last_read,
+				custmer_gender,
+				custmer_age,
+				custmer_address1,
+				custmer_address2,
+				custmer_address3,
+				custmer_tel,
+				custmer_tel_cel,
+				custmer_email,
+				custmer_employment,
+				custmer_employment_tel,
+				custmer_employment_email,
+				send_email_type,
+				first_visit_date,
+				custmer_regist_date,
+				member_type,
+				member_dist,
+				create_date,
+				update_date,
+				create_user,
+				update_user
+			)
+			values (
+				#custmer_mng_no#,
+				#custmer_name_first#,
+				#custmer_name_last#,
+				#custmer_name_first_read#,
+				#custmer_name_last_read#,
+				#custmer_gender#,
+				#custmer_age#,
+				#custmer_address1#,
+				#custmer_address2#,
+				#custmer_address3#,
+				#custmer_tel#,
+				#custmer_tel_cel#,
+				#custmer_email#,
+				#custmer_employment#,
+				#custmer_employment_tel#,
+				#custmer_employment_email#,
+				#send_email_type#,
+				#first_visit_date#,
+				#custmer_regist_date#,
+				#member_type#,
+				#member_dist#,
+				#create_date#,
+				#update_date#,
+				#create_user#,
+				#update_user#
+			)
+	</insert>
+	
+</sqlMap>

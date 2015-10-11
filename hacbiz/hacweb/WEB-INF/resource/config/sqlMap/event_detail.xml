@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<select id="selectEventDataTargetMonth" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select
+			ed.event_title
+			,ed.event_short_detail
+			,ed.event_detail
+			,dl.diary_recorded_d
+			,dl.diary_title
+			,dl.diary_ledger_code
+		from
+			hac_db.t_diary_ledger dl
+		inner join hac_db.event_detail as ed
+			on ed.event_group_code = dl.event_group_code
+		where
+			dl.account_id = #account_id#
+			and dl.diary_recorded_y = #diary_recorded_y#
+			and dl.diary_recorded_m = #diary_recorded_m#
+	</select>
+</sqlMap>

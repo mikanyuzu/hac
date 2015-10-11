@@ -1,0 +1,183 @@
+* {
+	font-family: "Comic Sans MS";
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #808080;
+}
+
+body {
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+div {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#loader {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    position: absolute; /* IE6対策 */
+    top: 50%;
+    left: 50%;
+    margin-top: -40px; /* heightの半分のマイナス値 */
+    margin-left: -40px; /* widthの半分のマイナス値 */
+    z-index: 100;
+}
+ 
+#fade {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 0px;
+    left: 0dpx;
+    z-index: 50;
+}
+
+
+.commonHeader {
+	height: 30px;
+}
+
+.mainContainerFooter {
+	width: 100%;
+	clear: both;
+}
+
+.commonHeadertitle {
+	font-size: 32px;
+	font-style: oblique;
+	color: #c0c0c0;
+	float: left;
+}
+
+.commonLoginInfo {
+	float: right;
+}
+
+.commonHeaderUnderLine {
+	clear: both;
+}
+
+.subTitle {
+	font-size: 18px;
+	font-style: oblique;
+	color: #808080;
+}
+
+.commonMessagefield {
+	height: 30px;
+}
+
+.commonMessagefield  span.messageStringsError {
+	color: #DC143C;
+}
+
+.commonMessagefield  span.messageStringsNormal {
+	color: #4169e1;
+}
+
+.commonMessagefield  span.messageStringsWarn {
+	color: #BDB76B;
+}
+
+.mainContainer {
+	clear: both;
+	min-height: 500px;
+	overflow: scroll;
+}
+
+.buttonCss1button {
+	font-size: 12px;
+	padding: 1px 0px;
+	width: 100px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 0px solid #000000;
+	color: #ffffff;
+	background: -moz-linear-gradient(top,#BFD9E5, #63B0CF 50%,#0080B3 50%,#09C);
+	background: -webkit-gradient(linear, left top, left bottom, from(#3b82ae),
+		to(#3b82ae) );
+}
+
+.buttonCss2button {
+	font-size: 12px;
+	padding: 1px 0px;
+	width: 150px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 0px solid #000000;
+	color: #ffffff;
+	background: -moz-linear-gradient(top,#BFD9E5, #63B0CF 50%,#0080B3 50%,#09C);
+	background: -webkit-gradient(linear, left top, left bottom, from(#3b82ae),
+		to(#3b82ae) );
+}
+
+.buttonCss3button {
+	color: #4682B4;
+	font-size: 12px;
+	padding: 1px 0px;
+	width: 150px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	border: 0px solid #000000;
+	text-align: left;
+	background-color: rgba(255 ,255, 255, 0);
+}
+
+.buttonCss4button {
+	color: #4682B4;
+	font-size: 12px;
+	padding: 1px 0px;
+	width: 150px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	border: 0px solid #000000;
+	text-align: left;
+	background-color: rgba(255 ,255, 255, 0);
+}
+
+#logoutButton {
+}
+
+#logoutButton:active {
+	color: #3b82ae;
+	background: -moz-linear-gradient(top, #ffffff 0%, #ffffff);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff),
+		to(#ffffff) );
+	border: 1px solid #3b82ae;
+	padding: 1px;
+	background-color: #ffffff;
+}
+
+#simpleSearchButton {
+}
+
+#mainMenubar {
+	float: left;
+	padding-left: 10px;
+}
+
+#commonSimpleSearchArea {
+	float: left;
+}
+
+.commonSimpleSearchAreaButton {
+	margin: 5px;
+}
+
+.commonTitle {
+	font-size: 14px;
+}
