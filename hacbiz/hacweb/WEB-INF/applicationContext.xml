@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spring設定ファイル アプリケーション共通 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- アノテーション設定 -->
+	<context:annotation-config />
+	<!-- 各コンポーネントオートスキャン <context:component-scan base-package="org.hac.*"> </context:component-scan> -->
+	<!-- DB接続情報設定 -->
+	<import resource="resource/config/spring/db/applicationContext_db_setting.xml" />
+
+	<!-- サーバ起動時処理設定 -->
+	<import
+		resource="resource/config/spring/init/applicationContext_init_proc_setting.xml" />
+
+	<!-- O/RマッピングFW設定 -->
+	<import
+		resource="resource/config/spring/or/applicationContext_ormapping_setting.xml" />
+
+	<!-- トランザクション管理設定 -->
+	<import
+		resource="resource/config/spring/transaction/applicationContext_transaction_setting.xml" />
+
+	<!-- 業務Action設定 -->
+	<import
+		resource="resource/config/spring/business/applicationContext_bis_action_setting.xml" />
+
+	<!-- 業務Facade設定 -->
+	<import
+		resource="resource/config/spring/business/applicationContext_bis_facade_setting.xml" />
+
+	<!-- 業務Service設定 -->
+	<import
+		resource="resource/config/spring/business/applicationContext_bis_service_setting.xml" />
+
+	<!-- 業務Dao設定 -->
+	<import
+		resource="resource/config/spring/business/applicationContext_bis_dao_setting.xml" />
+
+	<!-- 業務Model設定 -->
+	<import
+		resource="resource/config/spring/business/applicationContext_bis_model_setting.xml" />
+</beans>

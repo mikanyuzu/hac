@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+   Spring設定ファイル
+    業務Service設定
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- Eメール送信コンポーネント -->
+	<bean id="emailSend" class="org.hac.service.impl.EmailSend" scope="prototype">
+	</bean>
+
+	<!-- ログイン情報チェックコンポーネント -->
+	<bean id="checkUserInfo" class="org.hac.service.impl.CheckUserInfo"
+		scope="prototype">
+		<property name="orgDao" ref="org" />
+	</bean>
+
+	<!-- 入力情報チェックコンポーネント -->
+	<bean id="inputRequireCheck" class="org.hac.service.impl.InputRequireCheck"
+		scope="prototype">
+	</bean>
+	
+	<!-- 必須チェックコンポーネント -->
+	<bean id="requireCheck" class="org.hac.service.impl.RequireCheck"
+		scope="prototype">
+	</bean>
+	
+	<!-- 形式チェックコンポーネント -->
+	<bean id="formatCheck" class="org.hac.service.impl.FormatCheck"
+		scope="prototype">
+	</bean>
+	
+	<!-- 桁数チェックコンポーネント -->
+	<bean id="lengthCheck" class="org.hac.service.impl.LengthCheck"
+		scope="prototype">
+	</bean>
+	
+	<!-- 顧客登録コンポーネント -->
+	<bean id="registCustmer" class="org.hac.service.impl.RegistCustmer"
+		scope="prototype">
+		<property name="custmerDao" ref="custmer" />
+	</bean>
+	
+	<!-- 顧客検索コンポーネント -->
+	<bean id="searchCustmer" class="org.hac.service.impl.SearchCustmer"
+		scope="prototype">
+		<property name="custmerDao" ref="custmer" />
+	</bean>
+	
+	<!-- 会社検索コンポーネント -->
+	<bean id="corpLookup" class="org.hac.service.impl.CorpLookup"
+		scope="prototype">
+		<property name="orgDao" ref="org" />
+	</bean>
+	
+	<!-- 会社登録コンポーネント -->
+	<bean id="corpMasterRegist" class="org.hac.service.impl.CorpMasterRegist"
+		scope="prototype">
+		<property name="orgDao" ref="org" />
+	</bean>
+	
+	<!-- 店舗情報取得コンポーネント -->
+	<bean id="storesInfoLookup" class="org.hac.service.impl.StoresInfoLookup"
+		scope="prototype">
+		<property name="orgDao" ref="org" />
+	</bean>
+	
+	<!-- 店舗情報取得コンポーネント -->
+	<bean id="storeInfoOnlyLookup" class="org.hac.service.impl.StoreInfoOnlyLookup"
+		scope="prototype">
+		<property name="storeDao" ref="basic" />
+	</bean>
+	
+	<!-- ユーザ情報更新コンポーネント -->
+	<bean id="updateUserData" class="org.hac.service.impl.UpdateUserData"
+		scope="prototype">
+		<property name="usrDao" ref="usr" />
+	</bean>
+	
+	<!-- 店舗情報更新コンポーネント -->
+	<bean id="updateStpreData" class="org.hac.service.impl.UpdateStoreData"
+		scope="prototype">
+		<property name="storeDao" ref="basic" />
+	</bean>
+	
+	<!-- 店舗別予約情報取得コンポーネント -->
+	<bean id="reserveLookupByHub" class="org.hac.service.impl.ReserveLookupByHub"
+		scope="prototype">
+		<property name="reserveDao" ref="basic" />
+	</bean>
+	
+	<!-- 店舗別予約情報登録コンポーネント -->
+	<bean id="reserveRegistByHub" class="org.hac.service.impl.ReserveDataRegistByHub"
+		scope="prototype">
+		<property name="reserveDao" ref="basic" />
+	</bean>
+</beans>

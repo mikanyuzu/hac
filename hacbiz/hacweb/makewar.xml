@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="makewar" default="mkwar" basedir="./">
+
+	<!-- 対象DIR -->
+	<property name="war.home" value="." />
+
+	<!-- WARファイル名 -->
+	<property name="web-app.name" value="hacbizweb" />
+
+	<!-- WARファイル出力先 -->
+	<property name="war-dist" value="dist" />
+
+	<!-- warタスクによってwarファイルを作成 -->
+	<target name="mkwar">
+		<delete dir="WEB-INF/classes" />
+		<mkdir dir="WEB-INF/classes/config" />
+		<copy todir="WEB-INF/classes/config">
+			<fileset dir="../../bin/config" />
+		</copy>
+		<copy file="../../bin/database.properties" todir="WEB-INF/classes" />
+		<copy file="../../bin/log4j.xml" todir="WEB-INF/classes" />
+		<copy file="../../bin/struts.xml" todir="WEB-INF/classes" />
+		<war destfile="../../webapps/${web-app.name}.war" webxml="${war.home}/WEB-INF/web.xml">
+			<fileset dir="${war.home}" includes="Static/**/*,WEB-INF/**/*" />
+		</war>
+	</target>
+</project>

@@ -1,0 +1,12 @@
+/bin
+.openshift
+.classpath
+.project
+.build
+/hacbiz/hacdev/build
+/hacbiz/hacdev/hacdev.jar
+/hacbiz/hacweb/dist
+/hacbiz/hacweb/Static/img
+/hacbiz/hacweb/WEB-INF/classes
+/dev_tool
+push_local-tsrv.sh

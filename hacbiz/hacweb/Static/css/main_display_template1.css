@@ -1,0 +1,185 @@
+div#group01 {
+	float: left;
+	margin: 0px 30px 0px 0px;
+}
+
+div#group02 {
+	float: left;
+	margin: 0px 30px 0px 0px;
+}
+
+.workButton {
+	color: #ffffff;
+	background: -moz-linear-gradient(top, #ffa040 0%, #ffa040);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffa040),
+		to(#ffa040) );
+}
+
+.workButton:active {
+	color: #ffa040;
+	background: -moz-linear-gradient(top, #ffffff 0%, #ffffff);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff),
+		to(#ffffff) );
+	border: 1px solid #ffa040;
+	padding: 1px;
+	background-color: #ffffff;
+}
+
+.maintenanceButton {
+	color: #ffffff;
+	background: -moz-linear-gradient(top, #c00000 0%, #c00000);
+	background: -webkit-gradient(linear, left top, left bottom, from(#c00000),
+		to(#c00000) );
+}
+
+.maintenanceButton:active {
+	color: #c00000;
+	background: -moz-linear-gradient(top, #ffffff 0%, #ffffff);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff),
+		to(#ffffff) );
+	border: 1px solid #c00000;
+	padding: 1px;
+	background-color: #ffffff;
+}
+
+.contentsSideMenu {
+	width: 20%;
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: rgba(245, 245, 245, 0.6);
+	min-height: 500px;
+}
+
+.contentsMeinArea {
+	width: 70%;
+	float: left;
+	padding-left: 5px;
+}
+
+.contentsFooterArea {
+	width: 100%;
+	clear: both;
+}
+
+.sideMenuTitle {
+	background-color: #4682B4;
+	padding-left: 5px;
+	color: #ffffff;
+}
+/*
+.mainAreaTitle {
+    position: relative;
+    color: #ffffff ;
+    background: #4682B4;
+    font-size: 16pt ;
+    line-height: 1;
+    margin: 20px -10px 20px -10px;
+    padding: 10px 5px 10px 20px;
+    box-shadow:1px 3px 7px 0px  #666666 ;
+    border-top:3px solid #f7f9fe;
+}
+.mainAreaTitle:after, mainAreaTitle:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-top: 5px solid #333;
+}
+.mainAreaTitle:after {
+    left: 0;
+    border-right: 5px solid #333;
+}
+.mainAreaTitle:before {
+    right: 0;
+    border-left: 5px solid #333;
+}
+*/
+.sideMenu {
+	padding-left: 10%;
+}
+
+.sideMenuLink {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+/*
+.mainAreaTitle {
+	color: #4682B4;
+	font-weight: bold;
+}
+*/
+.mainAreaTitle {
+	margin: 0 0 10px 0;
+	padding: 2px 8px;
+	border-width: 0 0 5px 0;
+	border-color: #4682B4;
+	border-style: solid;
+	background: #fff;
+	color: #4682B4;
+	line-height: 120%;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.executeButton {
+	position: relative;
+	top: -40px;
+	left: 200px;
+	width: 100px;
+	margin-bottom: -15px;
+}
+
+table.selectResultDataList {
+	border-collapse: collapse;
+	width: 95%;
+}
+
+table.selectResultDataList th,td {
+	border: solid 1px #808080;
+	paddin: 3px;
+	width: 10%;
+}
+
+.alphaSearchCondition {
+	display: none;
+}
+
+.mainAreaSubTitle {
+	border-width: 0 0 3px 0;
+	border-color: #B0C4DE;
+	border-style: solid;
+	line-height: 110%;
+	font-weight: bold;
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+.selectResultArea {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 200px;
+}
+
+.selectResultAreaDetail {
+	overflow: scroll;
+	height: 200px;
+}
+
+.conditionArea {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.addConditions {
+	position: relative;
+	top: -45px;
+	left: 400px;
+}
+
+.defaultConditions {
+	margin-top: -30px;
+}

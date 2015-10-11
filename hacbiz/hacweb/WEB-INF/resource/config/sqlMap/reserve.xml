@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+
+	<!--  -->
+	<insert id="insertReserveMngByHubMngNo" parameterClass="java.util.HashMap">
+		insert 
+			into hub_reserve_ledger
+			values (
+				#hub_mng_no#,
+				#reserve_ledger_no#,
+				#reserve_date#,
+				#custmer_mng_no#,
+				#reserve_name_first#,
+				#reserve_name_last#,
+				#reserve_name_first_read#,
+				#reserve_name_last_read#,
+				#reserve_tel#,
+				#intr_custmer_mng_no#,
+				#remarks#,
+				#create_date#,
+				#update_date#,
+				#create_user#,
+				#update_user#
+			)
+	</insert>
+	
+	<!--  -->
+	<insert id="insertReserveDetailByHubMngNo" parameterClass="java.util.HashMap">
+		insert 
+			into reserve_menu_detail
+			values(
+				#reserve_ledger_no#,
+				#used_menu#,
+				#unit_price#,
+				#discount_type#,
+				#discount#,
+				#create_date#,
+				#update_date#,
+				#create_user#,
+				#update_user#
+			)
+	</insert>
+	
+	<!--  -->
+	<select id="selectReserveByHubMngNo" 
+			parameterClass="java.util.HashMap" 
+			resultClass="java.util.HashMap">
+		select 
+			ledger.*,
+			detail.*
+		from 
+			reserve_menu_detail as detail
+		inner join
+			hub_reserve_ledger as ledger
+		on 
+			ledger.reserve_ledger_no = detail.reserve_ledger_no
+		where 
+			ledger.hub_mng_no = #hub_mng_no#
+		<isNotEmpty property="reserve_ledger_no">
+			and ledger.reserve_ledger_no = #reserve_ledger_no#
+		</isNotEmpty>
+		<isNotEmpty property="custmer_mng_no">
+			<iterate property="custmer_mng_no" prepend="and ledger.custmer_mng_no in" open="(" close=")" conjunction="," >
+		      #custmer_mng_no[]#
+		    </iterate>
+		</isNotEmpty>
+		<isNotEmpty property="reserve_tel">
+			and ledger.reserve_tel = #reserve_tel#
+		</isNotEmpty>
+		<isNotEmpty property="remarks">
+			and ledger.remarks like %#remarks#%
+		</isNotEmpty>
+		<isNotEmpty property="reserve_date_start">
+			<![CDATA[
+				and ledger.reserve_date >= #reserve_date_start#
+			]]>
+		</isNotEmpty>
+		<isNotEmpty property="reserve_date_end">
+			<![CDATA[
+				and ledger.reserve_date <= #reserve_date_end#
+			]]>
+		</isNotEmpty>
+	</select>
+	
+	<!--  -->
+	<select id="selectCountReserveByHubMngNo" 
+			parameterClass="java.util.HashMap" 
+			resultClass="java.util.HashMap">
+		select 
+			count(*) as cnt
+		from 
+			hub_reserve_ledger 
+		where 
+			hub_mng_no = #hub_mng_no#
+		and 
+			reserve_ledger_no like concat(#now_yyyy_mm#, '%')
+	</select>
+</sqlMap>

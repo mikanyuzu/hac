@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<select id="existHubMngNo" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			org_mng_no,
+			hub_mng_no,
+			org_name,
+			org_tel,
+			org_mail,
+			org_sys_user,
+			create_date,
+			update_date,
+			create_user,
+			update_user
+		from
+			org_mst
+		where
+			hub_mng_no = #hub_mng_no#
+		
+	</select>
+	
+	<select id="existOrgMngNo" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+		    org_mng_no,
+		    hub_mng_no,
+		    org_tel,
+		    org_mail,
+		    org_sys_user,
+		    org_dist,
+		    create_date,
+		    update_date,
+		    create_user,
+		    update_user
+		from 
+			org_mst
+		where 
+			org_mng_no = #org_mng_no#
+	</select>
+	
+	<select id="selectHubInfoByOrgMngNo" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			store.* 
+		from 
+			store_mng as store
+		inner join 
+			org_mst as org
+		on 
+			org.hub_mng_no = store.hub_mng_no
+		where 
+			org.org_mng_no = #org_mng_no#
+	</select>
+	
+	<select id="existUser" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			usr_mst.hub_mng_no,
+			usr_mst.user_id,
+			usr_mst.user_name,
+			usr_mst.user_tel,
+			usr_mst.user_mail,
+			usr_mst.user_role_type
+		from 
+			usr_mst 
+		where 
+			exists (select * from store_mng where store_mng.hub_mng_no = usr_mst.hub_mng_no)
+		and usr_mst.hub_mng_no = #hub_mng_no#
+		and user_id = #user_id#
+		and user_passwd = #user_passwd#
+	</select>
+</sqlMap>

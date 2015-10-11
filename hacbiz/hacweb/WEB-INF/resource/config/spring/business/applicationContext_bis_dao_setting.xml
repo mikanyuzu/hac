@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spring設定ファイル 業務Service設定 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="basic" class="org.hac.dao.impl.BasicDao" scope="prototype">
+		<constructor-arg ref="sqlMapClient"></constructor-arg>
+	</bean>
+	<bean id="org" class="org.hac.dao.impl.OrgDao" scope="prototype">
+		<constructor-arg ref="sqlMapClient"></constructor-arg>
+	</bean>
+	<bean id="custmer" class="org.hac.dao.impl.CustmerDao" scope="prototype">
+		<constructor-arg ref="sqlMapClient"></constructor-arg>
+	</bean>
+	<bean id="usr" class="org.hac.dao.impl.UsrDao" scope="prototype">
+		<constructor-arg ref="sqlMapClient"></constructor-arg>
+	</bean>
+</beans>
